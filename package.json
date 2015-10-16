@@ -1,0 +1,26 @@
+{
+  "name": "travel-blog",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.1.11"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annieredmond1/Travel-blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/annieredmond1/Travel-blog/issues"
+  },
+  "homepage": "https://github.com/annieredmond1/Travel-blog#readme",
+  "description": ""
+}
