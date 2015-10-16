@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Travel Tales</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- VENDOR SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <script src="/static/base.js"></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Travel Tales</h1>
+            <h3>Tell us about your favorite travel destination!</h3>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <form class="form-inline" id="blogPost">
+              <div class="form-group">
+                <textarea class="form-control input-lg" style="width: 100%" rows="3" cols="80" value="blogPost" id="blogText" placeholder="Type your post here..."></textarea>           
+                <button type="submit" id="blogSubmit" class="btn btn-info-outline pull-right">Post</button>
+              </div>  
+            </form>
+          </div>
+        </div>
+      </div>  
+    </div>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2" id="allPosts">
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
