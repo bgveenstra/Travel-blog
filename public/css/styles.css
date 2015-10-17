@@ -1,6 +1,5 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  padding: 20px;
   color: black;
   background-image: url('http://fotonin.com/data_images/out/2/749259-beautiful-sunset-wallpaper.jpg');
   background-repeat: no-repeat;
@@ -10,82 +9,28 @@ body {
 }
 
 h1 {
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: center;
-  color: rgba(0,0,0, .8);
+  color: white;
   font-size: 130px;
-  text-shadow: #251E27 0 -3px;
+  
   font-weight: bolder;
 }
 
 h3 {
 	text-align: center;
-	color: rgba(0,0,0, .8);
+	color: white;
 	font-size: 40px;
 	margin-bottom: 150px;
-	margin-top: 50px;
+	margin-top: 200px;
 	font-weight: bold;
 	
 }
 
-
-textarea {
-	width: 500px;
-	resize: none;
+.post {
+	padding: 40px;
 }
 
-
-#allPosts {
+.close {
 	padding: 20px;
-}
-#blogText {
-	background-color: rgba(0,0,0, .5);
-	color: #C1BAC7;
-}
-.commentText {
-	background-color: rgba(0,0,0, .5);
-	color: #C1BAC7;
-}
-
-
-.specificComment {
-	background-color: rgba(0,0,0, .5);
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 5px;
-	margin: -20px;
-	color: #C1BAC7;
-}
-
-.specificPost {
-	background-color: rgba(0,0,0, .5);
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 20px;
-	margin: 20px;
-	color: #C1BAC7;
-}
-
-@media (max-width: 1000px) {
-	.header {
-		min-height: 400px;
-	}
-
-	h1 {
-		margin-top: 20px;
-		font-size: 70px; 
-	}
-}
-
-
-@media (max-width: 500px) {
-	h1 {
-	  margin-top: 10px;
-	  font-size: 50px;
-	}
-
-	h3 {
-		font-size: 25px;
-		
-	}
 }

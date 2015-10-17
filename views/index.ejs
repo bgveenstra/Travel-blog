@@ -31,21 +31,26 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <form class="form-inline" id="blogPost">
-              <div class="form-group">
-                <textarea class="form-control input-lg" style="width: 100%" rows="3" cols="80" value="blogPost" id="blogText" placeholder="Type your post here..."></textarea>           
-                <button type="submit" id="blogSubmit" class="btn btn-info-outline pull-right">Post</button>
-              </div>  
-            </form>
+            <form id="newPost">
+              <input class="form-control" type="text" name="body">
+              <input class="btn btn-primary" type="submit" value="Post">
+            </form> 
+            <ul class="posts list-group">
+              <% posts.forEach(function(post) { %>
+              <li class="post list-group-item"><%= post.body %> <span data-id="<%= post._id %>" class='close delete'>Remove Post</span></li>
+              <%}); %>
+            </ul>
           </div>
-        </div>
-      </div>  
-    </div>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2" id="allPosts">
-          
-        </div>
       </div>
     </div>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
