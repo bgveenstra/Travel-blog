@@ -5,6 +5,7 @@ $(document).ready(function(){
 	$('#newPost').on('submit', function(e) {
 		e.preventDefault();
 		var formData = $(this).serialize();
+		console.log(formData);
 		$.ajax({
 			url: '/posts',
 			type: "POST",
@@ -13,7 +14,7 @@ $(document).ready(function(){
 		.done(function(data) {
 			console.log(formData);
 			console.log("made a new post", data);
-			var postHtml = "<li class='post list-group-item'>" + data.body + "<span data-id='" + data._id + "' class='close delete'>Remove Post</span></li>";
+			var postHtml = "<li class='post list-group-item'><strong><font size='4'>" + data.location + ":</font></strong> <br>" + data.description + "<span data-id='" + data._id + "' class='close delete'>Remove Post</span></li>";
 			$('.posts').prepend(postHtml);
 			$('#newPost')[0].reset();
 		})

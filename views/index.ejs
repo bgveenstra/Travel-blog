@@ -32,13 +32,14 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
             <form id="newPost">
-              <input class="form-control" type="text" name="body">
+              <input class="form-control" type="text" name="location">
+              <input class="form-control" type="text" name="description">
               <input class="btn btn-primary" type="submit" value="Post">
             </form> 
             <ul class="posts list-group">
-              <% posts.forEach(function(post) { %>
-              <li class="post list-group-item"><%= post.body %> <span data-id="<%= post._id %>" class='close delete'>Remove Post</span></li>
-              <%}); %>
+              <% for(var i=posts.length-1; i<0; i--) { %>
+              <li class="post list-group-item"><strong><font size='4'><%= posts[i].location %>:</font></strong> <br><%= posts[i].description %> <span data-id="<%= post._id %>" class='close delete'>Remove Post</span></li>
+              <%}; %>
             </ul>
           </div>
       </div>
