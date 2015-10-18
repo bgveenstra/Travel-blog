@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
 
 var postSchema = mongoose.Schema({
-	location: String,
-    description: String, 
+	location: {type: String, required: true},
+    description: { type: String, required: true}, 
+    likeCount: { type: Number, default: 0},
     date: { type: Date, default: Date.now }
 });
 

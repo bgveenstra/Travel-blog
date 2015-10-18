@@ -27,6 +27,7 @@ app.get('/posts', function(req, res) {
 });
 
 app.post('/posts', function(req, res) {
+	console.log(req.body);
 	db.Post.create(req.body, function(err, post) {
 		console.log("post request went through");
 		if (err) console.log(err);
@@ -42,6 +43,17 @@ app.delete('/posts/:_id', function(req, res) {
 		console.log("post deleted");
 		res.json("The post is gone");
 	});
+});
+
+app.put('/posts/:_id', function(req, res) {
+	var toBeLiked = db.Post.find({
+		_id: req.params._id
+	});
+
+	toBeLiked.likeCount = toBeLiked.likeCount + 1;
+	console.log("the likes are updated");
+	res.json("the post is liked");
+
 });
 
 

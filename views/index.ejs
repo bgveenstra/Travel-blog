@@ -19,30 +19,37 @@
     <script src="/static/base.js"></script>
   </head>
   <body>
-    <div class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>Travel Tales</h1>
-            <h3>Tell us about your favorite travel destination!</h3>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+            <img  id="heart" src='http://www.johnboccio.com/quotes/IheartQuote580x300.jpg'>
+        </div>
+        <div class="col-md-4 col-md-offset-8">
+        <img id="movie" src='http://www.jammadesigns.com/media/home.theater.decor.Movie.Ticket.jpg'>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <form id="newPost">
-              <input class="form-control" type="text" name="location">
-              <input class="form-control" type="text" name="description">
-              <input class="btn btn-primary" type="submit" value="Post">
-            </form> 
-            <ul class="posts list-group">
-              <% for(var i=posts.length-1; i<0; i--) { %>
-              <li class="post list-group-item"><strong><font size='4'><%= posts[i].location %>:</font></strong> <br><%= posts[i].description %> <span data-id="<%= post._id %>" class='close delete'>Remove Post</span></li>
-              <%}; %>
-            </ul>
-          </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+        <h3>Share your favorite movie quote!</h3>
+        </div>
       </div>
+    </div> 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <form class="form-group form-inline" id="newPost">
+            <input class="form-control" id="title" type="text" name="location" placeholder="Movie title...">
+            <input class="form-control" style="width:680px" id="movieQuote" type="text" name="description" placeholder="Quote...">
+            <input class="btn btn-primary" type="submit" value="Post">
+          </form> 
+          <ul class="posts list-group">
+            <% posts.forEach(function(post) { %>
+            <li class="post"><strong><font size='5'><%= post.location %>:</font></strong> <br><%= post.description %><br><button><img id="like" data-id="<%= post._id %>" src="http://iconfever.com/images/portfolio/thumbs/freephotoshoptutorials.org-heart-icon.jpg"></button><small> <%=post.likeCount%> likes</small><span data-id="<%= post._id %>" class='close delete'>X</span></li>
+            <%}); %>
+          </ul>
+        </div>
     </div>
   </body>
 </html>
