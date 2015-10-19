@@ -42,7 +42,7 @@
           <form class="form-group form-inline" id="newPost">
             <input class="form-control" id="title" type="text" name="location" placeholder="Movie title...">
             <input class="form-control" style="width:680px" id="movieQuote" type="text" name="description" placeholder="Quote...">
-            <input class="btn btn-primary" type="submit" value="Post">
+            <input class="btn btn-primary" id="submitQuote" type="submit" value="Post">
           </form> 
           <ul class="posts list-group">
             <% posts.forEach(function(post) { %>
@@ -50,6 +50,14 @@
             <%}); %>
           </ul>
         </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="fail" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <br>
+          <h2>Nothing to post<br><br><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button><br></h2>
+        </div>
+      </div>
     </div>
   </body>
 </html>

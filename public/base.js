@@ -19,6 +19,7 @@ $(document).ready(function(){
 			$('#newPost')[0].reset();
 		})
 		.fail(function(data) {
+			$('#fail').modal();
 			console.log("Failed to post");
 		});
 

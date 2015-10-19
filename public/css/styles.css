@@ -41,7 +41,13 @@ button {
     border: none !important;
 }​
 
+#fail {
+	margin-top: 
+}
 
+h2 {
+	padding: 20px;
+}
 
 #newPost {
 	margin-bottom: 50px;
@@ -53,6 +59,6 @@ button {
 	max-width: 40px;
 }
 
-.btn {
+#submitQuote {
 	background-color: black;
 }
