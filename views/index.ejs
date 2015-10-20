@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- @TODO: comments  -->
+<!-- @TODO: change post.location to title -->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -19,7 +21,8 @@
     <script src="/static/base.js"></script>
   </head>
   <body>
-    <div class="container">
+    <!-- header images -->
+    <div class="container">  
       <div class="row">
         <div class="col-md-8">
             <img  id="heart" src='http://www.johnboccio.com/quotes/IheartQuote580x300.jpg'>
@@ -29,6 +32,8 @@
         </div>
       </div>
     </div>
+
+    <!-- title -->
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-2">
@@ -36,21 +41,25 @@
         </div>
       </div>
     </div> 
+
+    <!-- posts -->
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
+          <!-- create post form -->
           <form class="form-group form-inline" id="newPost">
             <input class="form-control" id="title" type="text" name="location" placeholder="Movie title...">
             <input class="form-control" style="width:680px" id="movieQuote" type="text" name="description" placeholder="Quote...">
             <input class="btn btn-primary" id="submitQuote" type="submit" value="Post">
           </form> 
           <ul class="posts list-group">
-            <% posts.forEach(function(post) { %>
-            <li class="post"><strong><font size='5'><%= post.location %>:</font></strong> <br><%= post.description %><br><button><img id="like" data-id="<%= post._id %>" src="http://iconfever.com/images/portfolio/thumbs/freephotoshoptutorials.org-heart-icon.jpg"></button><small> <%=post.likeCount%> likes</small><span data-id="<%= post._id %>" class='close delete'>X</span></li>
-            <%}); %>
+            <% for(var i=posts.length-1; i>=0; i--) { %>
+            <li class="post"><strong><font size='5'><%= posts[i].location %>:</font></strong> <br><%= posts[i].description %><br><button><img id="like" data-id="<%= posts[i]._id %>" src="http://iconfever.com/images/portfolio/thumbs/freephotoshoptutorials.org-heart-icon.jpg"></button><small> <%=posts[i].likeCount%> likes</small><span data-id="<%= posts[i]._id %>" class='close delete'>X</span></li>
+            <%}; %>
           </ul>
         </div>
     </div>
+    <!-- warning modal for when empty form is submitted -->
     <div class="modal fade" tabindex="-1" id="fail" role="dialog">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">

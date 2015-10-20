@@ -7,17 +7,20 @@ $(document).ready(function(){
 		var formData = $(this).serialize();
 		$('#title').focus();
 		console.log(formData);
+		// @TODO - $.post, with success, error
 		$.ajax({
 			url: '/posts',
 			type: "POST",
 			data: formData
 		})
+		// when ajax request completes
 		.done(function(data) {
 			console.log("made a new post", data);
 			var postHtml = "<li class='post'><strong><font size='4'>" + data.location + ":</font></strong> <br>" + data.description + "<br><img id='like' data-id='<%= post._id %>' src='http://iconfever.com/images/portfolio/thumbs/freephotoshoptutorials.org-heart-icon.jpg'><small>" + data.likeCount +" likes</small><span data-id='" + data._id + "'class='close delete'>X</span></li>";
 			$('.posts').prepend(postHtml);
 			$('#newPost')[0].reset();
 		})
+		// what do do if ajax request gave an error: show warning modal
 		.fail(function(data) {
 			$('#fail').modal();
 			console.log("Failed to post");
@@ -29,6 +32,7 @@ $(document).ready(function(){
 		var postId = $(this).data().id;
 		var deletedPost = $(this).closest('li');
 
+		// @TODO - possible to change to $.delete or some shorthand?
 		$.ajax({
 			url:'/posts/' + postId,
 			type: "DELETE"
@@ -40,7 +44,7 @@ $(document).ready(function(){
 		})
 		.fail(function(data) {
 			console.log("failed to delete post");
-
+			alert("failed to delete post");
 		});
 	});
 	$('.posts').on('click', '#like', function(e) {

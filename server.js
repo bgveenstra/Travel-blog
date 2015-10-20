@@ -19,6 +19,13 @@ var db = require('./models/index.js');
 
 //ROUTES
 
+app.get('/', function(req, res) {
+	db.Post.find({}, function(err, posts) {
+		if(err) console.log(err);
+		res.render('index', {posts: posts});
+	});
+});
+
 app.get('/posts', function(req, res) {
 	db.Post.find({}, function(err, posts) {
 		if(err) console.log(err);
@@ -55,13 +62,6 @@ app.put('/posts/:_id', function(req, res) {
 	res.json("the post is liked");
 
 });
-
-
-
-
-
-
-
-    app.listen(3000, function (){
-      console.log("listening on port 3000");
+    app.listen(4000, function (){
+      console.log("listening on port 4000");
     });
